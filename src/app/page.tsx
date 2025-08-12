@@ -6,6 +6,19 @@ import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 
 
+/**
+ * Client-side authentication UI component.
+ *
+ * Renders a session-aware sign-up / sign-in interface using the shared `authClient`.
+ * - When a session exists, shows the current user's name and a Sign out button that calls `authClient.signOut()`.
+ * - When no session exists, shows two forms:
+ *   - Sign-up: collects name, email, and password and calls `authClient.signUp.email(...)`.
+ *   - Sign-in: collects email and password and calls `authClient.signIn.email(...)`.
+ *
+ * Both auth calls use simple success/error callbacks that display a window alert. Local component state is used for form inputs.
+ *
+ * @returns The Home page React element.
+ */
 export default function Home() {
 const { data: session } = authClient.useSession()
 
