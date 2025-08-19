@@ -1,3 +1,4 @@
+import React from "react";
 import { SidebarProvider } from "@/components/ui/sidebar";
 import { Dashboardsidebar } from "@/modules/dashboard/ui/components/dashboard_sidebar";
 
